@@ -18,13 +18,12 @@ RUN \
    echo "deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main" | tee /etc/apt/sources.list.d/linuxuprising-java.list && \
    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 73C3DB2A && \
    apt-get -yqq update
-   
+
 RUN \
    (echo oracle-java11-installer shared/accepted-oracle-license-v1-2 select true |  /usr/bin/debconf-set-selections) && \
    apt-get -yqq install --no-install-recommends -y oracle-java11-installer && \
    rm -rf /var/cache/oracle-jdk11-installer && \
    echo "networkaddress.cache.ttl=60" >> /usr/lib/jvm/java-11-oracle/conf/security/java.security
-   
 
 # Cleanup some things.
 RUN apt-get -q autoclean && \
