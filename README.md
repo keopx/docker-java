@@ -1,6 +1,6 @@
 # Introduction #
 
-This image works with **Debian 9** and use current **Java 8** version.
+This image works with **Debian 9** and use current **Java 12/11** version.
 
 ## Example usage: ##
 
